@@ -48,28 +48,37 @@ import java.util.Scanner;
                     break;
 
                 case 4:
-                    System.out.println("1. Ver historial del día");
-                    System.out.println("2. Ver corte de caja");
-                    System.out.println("3. Ver información del día");
-                    System.out.println("4. Volver");
-                    opcionHistorial = sc.nextInt();
-                    sc.nextLine();
                     try {
                         do {
-                            if (opcionHistorial == 1){
-                                historial.mostrarHistorial();
-                            } else if (opcionHistorial == 2) {
-                                historial.mostrarCorteCaja();
-                            } else if (opcionHistorial == 3){
-                                historial.mostrarInformacionDia();
-                            }else {
-                                System.out.println("No valido");
+                            System.out.println("1. Ver historial del día");
+                            System.out.println("2. Ver corte de caja");
+                            System.out.println("3. Ver información del día");
+                            System.out.println("4. Volver");
+                            opcionHistorial = sc.nextInt();
+                            sc.nextLine();
+                            switch (opcionHistorial) {
+                                case 1:
+                                    historial.mostrarHistorial();
+                                    break;
+                                case 2:
+                                    historial.mostrarCorteCaja();
+                                    break;
+                                case 3:
+                                    historial.mostrarInformacionDia();
+                                    break;
+                                case 4:
+                                    break;
+                                default:
+                                    System.out.println("No valido");
                             }
-                        }while (opcionHistorial != 4);
-                    }catch (Exception e) {
+
+                        } while (opcionHistorial != 4); // ✅ ahora sí se detiene
+
+                    } catch (Exception e) {
                         System.out.println("No valido");
                     }
                     break;
+
 
                 case 5:
                     menu.administrarMenu(sc);
