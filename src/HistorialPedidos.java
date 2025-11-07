@@ -6,12 +6,6 @@ public class HistorialPedidos {
     public HistorialPedidos() {
         historial = new Stack<>();
     }
-    public void guardarPedido(Pedido pedido) {
-        if (pedido != null) {
-            historial.push(pedido);
-        }
-    }
-
     public void guardarCobrado(Pedido pedido) {
         if (pedido != null) {
             pedido.pagado = true;

@@ -26,6 +26,7 @@ public class TomaPedidos {
         }
     }
 
+    // lo puse pero no se usa
     public void verPrimerPedido() {
         Pedido pedido = pedidos.peek();
         if (pedido != null) {
@@ -34,11 +35,11 @@ public class TomaPedidos {
             System.out.println("No hay pedidos");
         }
     }
-
+    // lo puse pero no se usa
     public void verTotalPedidos() {
         System.out.println("Total de pedidos" + pedidos.size());
     }
-
+    // lo puse pero no se usa
     public boolean hayPedidos() {
         return !pedidos.isEmpty();
     }
