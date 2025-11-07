@@ -74,6 +74,18 @@ public class MenuPlatillos {
         }
         System.out.println("----------");
     }
+
+    public Platillo obtenerPlatillo(int indice) {
+        if (indice >= 0 && indice < menu.size()) {
+            return menu.get(indice);
+        }
+        return null;
+    }
+
+    public int menuSize() {
+        return menu.size();
+    }
+
     public void administrarMenu(Scanner sc) {
         while (true) {
             System.out.println("\nADMINISTRACION DEL MENU");

@@ -12,7 +12,7 @@ public class Pedido {
     }
     @Override
     public String toString() {
-        return "Pedido [N.0=" + numeroPedido + ", Plato=" + nombrePlatillo + ", Precio=" + precio + ", Estado=" + pagado + "]";
+        return "Pedido [N.0=  " + numeroPedido + ", Plato=  " + nombrePlatillo + ", Precio=  " + precio + ", Estado de pago=  " + pagado + "]";
     }
 
 }

@@ -39,7 +39,7 @@ public class HistorialPedidos {
 
         for (Pedido p : historial) {
             if (p.pagado) {
-                total += p.precio;
+                total = total + p.precio;
                 totalPedidos++;
             }
         }
