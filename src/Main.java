@@ -1,16 +1,16 @@
 import java.util.Scanner;
-import javax.swing.*;
  class Main {
     public static void main(String[] args) {
         int opcion;
         int opcionHistorial;
         MenuPlatillos menu = new MenuPlatillos();
-        TomaPedidos cola = new TomaPedidos();
+        TomaPedidos colaPedidos = new TomaPedidos();
         HistorialPedidos historial = new HistorialPedidos();
         Scanner sc = new Scanner(System.in);
 
-        menu.mostrarMenu();
+        //menu.mostrarMenu();
         while (true) {
+
             System.out.println("RESTAURANTE");
             System.out.println("1. Tomar pedido");
             System.out.println("2. Atender pedido (marcar pagado)");
@@ -27,24 +27,24 @@ import javax.swing.*;
                 case 1:
                     menu.mostrarMenu();
                     if (menu.menuSize() > 0) {
-                        System.out.print("Índice del platillo: ");
-                        int ind = sc.nextInt();
-                        Platillo p = menu.obtenerPlatillo(ind);
-                        if (p != null) {
-                            cola.agregarPedido(p.nombre, p.precio);
+                        System.out.print("Numero de plato: ");
+                        int index = sc.nextInt();
+                        Platillo plato = menu.obtenerPlatillo(index);
+                        if (plato != null) {
+                            colaPedidos.agregarPedido(plato.nombre, plato.precio);
                         } else {
                             System.out.println("Platillo no válido");
                         }
                     }
                     break;
                 case 2:
-                    Pedido pedido = cola.eliminarPedido();
+                    Pedido pedido = colaPedidos.eliminarPedido();
                     if (pedido != null) {
                         historial.guardarCobrado(pedido);
                     }
                     break;
                 case 3:
-                    cola.mostrarPedidos();
+                    colaPedidos.mostrarPedidos();
                     break;
 
                 case 4:
