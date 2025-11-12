@@ -1,28 +1,31 @@
 import java.util.LinkedList;
 import java.util.Scanner;
-
+// esta clase maneja el menu de platillos
+// usa una lista enlazada para guardar los platillos
 public class MenuPlatillos {
     private LinkedList<Platillo> menu;
 
     public MenuPlatillos() {
+        // lista enlazada que almacena los platillos
         menu = new LinkedList<>();
-
+        // se agregan los platillos por defecto
         menu.add(new Platillo("Burrito", 60));
         menu.add(new Platillo("Pozole", 90));
         menu.add(new Platillo("Tamales", 25));
         menu.add(new Platillo("Sopes", 35));
         menu.add(new Platillo("Chilaquiles", 75));
     }
+    // agrega un platillo al inicio de la lista
     public void agregarInicio(String nombre, double precio) {
         menu.addFirst(new Platillo(nombre, precio));
         System.out.println("Plato agregado al inicio");
     }
-
+    // agrega un platillo al final de la lista
     public void agregarFinal(String nombre, double precio) {
         menu.addLast(new Platillo(nombre, precio));
         System.out.println("Plato agregado al final");
     }
-
+    // elimina el primer platillo de la lista
     public void eliminarPrimero() {
         if (!menu.isEmpty()) {
             menu.removeFirst();
@@ -31,7 +34,7 @@ public class MenuPlatillos {
             System.out.println("Menu Vacio");
         }
     }
-
+    // elimina un platillo de la lista por indice
     public void eliminarEspecifico(int indice) {
         if (indice >= 0 && indice < menu.size()) {
             menu.remove(indice);
@@ -40,7 +43,7 @@ public class MenuPlatillos {
             System.out.println("No valido");
         }
     }
-
+    // elimina el ultimo platillo de la lista
     public void eliminarFinal() {
         if (!menu.isEmpty()) {
             menu.removeLast();
@@ -49,7 +52,7 @@ public class MenuPlatillos {
             System.out.println("Menu Vacio");
         }
     }
-
+    // busca un platillo por nombre ignorando mayus o minus
     public void buscarPlatillo(String nombre) {
         boolean buscando = false;
         for (int index = 0; index < menu.size(); index++) {
@@ -62,7 +65,7 @@ public class MenuPlatillos {
             System.out.println("Plato no encontrado");
         }
     }
-
+    // muestra el menu con los respectivos indices q empiezan en 0
     public void mostrarMenu() {
         System.out.println("\nMenuuuuu");
         if (menu.isEmpty()) {
@@ -74,7 +77,7 @@ public class MenuPlatillos {
         }
         System.out.println("----------");
     }
-
+    // obtiene un platillo por indice
     public Platillo obtenerPlatillo(int indice) {
         if (indice >= 0 && indice < menu.size()) {
             return menu.get(indice);
@@ -85,9 +88,10 @@ public class MenuPlatillos {
     public int menuSize() {
         return menu.size();
     }
-
+    // este metodo administra el menu y las operacion q se pueden hacer con el
     public void administrarMenu(Scanner sc) {
         while (true) {
+            // imprime el menu
             System.out.println("\nADMINISTRACION DEL MENU");
             System.out.println("1. Agregar inicio");
             System.out.println("2. Agregar final");
@@ -101,7 +105,7 @@ public class MenuPlatillos {
 
             int opcion = sc.nextInt();
             sc.nextLine();
-
+            // hace las operaciones
             switch (opcion) {
                 case 1:
                     System.out.print("Nombre: ");
